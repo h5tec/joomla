@@ -1,4 +1,4 @@
-# Joomla! based on Debian Stretch
+# joomla! based on Debian Stretch
 FROM debian:stretch
 MAINTAINER H5.Technology <admin@h5tec.com>
 
