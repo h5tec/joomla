@@ -9,9 +9,15 @@ _by H5.Technology_ **`[admin@h5tec.com]`**
 ### Included 
 * **`php.ini`**    
 ```ini
-upload_max_filesize=16M
-post_max_size=16M
-max_execution_time=60
+memory_limit = 256M
+post_max_size = 32M
+date.timezone = Europe/Berlin
+upload_max_filesize = 32M
+post_max_size = 32M
+max_execution_time = 60
+extension = apcu.so
+extension = memcached.so
+extension = redis.so
 ```
 * **`apache2.conf`**
 ```ini
