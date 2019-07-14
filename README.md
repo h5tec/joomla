@@ -102,7 +102,7 @@ server {
 ```bash
 certbot --nginx -d example.org
 ```
-* Compose Up Environment
+### Compose Up Environment
 * Change directory to the path docker-compose.yaml lies in
 > **`cd pathtoDockerComposeFIle`**  
 * Compose up
