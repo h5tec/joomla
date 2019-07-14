@@ -113,3 +113,39 @@ _Certbot check for new certificate twice a day via_
 _Certbot timer status can be checked with_  
 **`systemctl status certbot.timer`**  
 
+
+### JUST IN CASE
+
+* How to install **`docker`** on **`debian:stretch`**
+```bash
+sudo apt-get update
+sudo apt-get install -y \
+    dirmngr \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg2 \
+    software-properties-common
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/debian \
+   $(lsb_release -cs) \
+   stable"
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
+
+* How to install docker-compose?
+```bash
+curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo docker-compose --version
+```
+
+* Make **`docker`** ps bit nicer
+```bash
+alias docks='docker ps --format="table {{.ID}}\t{{.Status}}\t{{.Names}}"'
+```
+_so, just use **`docks`** to see runnnig container, or use **`docks -a`**_  
+_and may add this code to ~/.profile_
