@@ -20,12 +20,13 @@ max_execution_time=60
 </IfModule>
 ```
 
-### One Command Line Run
+### Run Container by CommandLine
 ```docker
 docker run -d --restart=always --name myjoomla -p 8080:80 -v /dock/data/myjoomla/logs:/var/log/apache2 -v /dock/data/myjoomla/html:/var/www/html/joomla enbucm/joomla
 ```
 
-### Docker-Compose
+### Compose Joomla together with MySQL and PHPmyAdmin
+* **`docker-compose.yaml`**
 ```yaml
 version: '3.1'
 
