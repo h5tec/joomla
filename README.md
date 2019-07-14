@@ -107,8 +107,7 @@ certbot --nginx -d example.org
 > **`cd pathtoDockerComposeFIle`**  
 * Compose up
 > **`docker-compose up -d`**  
-* Check Login  
-https://example.org  
+* Check Login https://example.org  
 * How to bring down environment?
 > **`docker-compose down`**  
 
