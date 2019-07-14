@@ -108,7 +108,7 @@ https://www.ssllabs.com/ssltest/analyze.html?d=example.org
 _...f i n i s h e d_  
   
 _Certbot check for new certificate twice a day via_  
-**`/etc/systemd/system/timers.target.wants/certbot.timer``**  
+**`/etc/systemd/system/timers.target.wants/certbot.timer`**  
   
 _Certbot timer status can be checked with_  
 **`systemctl status certbot.timer`**  
