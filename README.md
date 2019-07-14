@@ -143,7 +143,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo docker-compose --version
 ```
 
-* Make **`docker`** ps bit nicer
+* Make **`docker ps`** bit nicer
 ```bash
 alias docks='docker ps --format="table {{.ID}}\t{{.Status}}\t{{.Names}}"'
 ```
