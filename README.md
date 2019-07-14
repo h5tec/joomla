@@ -67,7 +67,7 @@ apt install -y ufw nginx python-certbot-nginx
 ```bash
 ufw allow 'Nginx Full'
 ```
-* Create Nginx Congfiguration change **`example.org`** to your domainname
+* Create Nginx Congfiguration change **`example.org`** to your domainname  
 **`nano /etc/nginx/conf.d/example.org.conf`**
 ```conf
 server {
