@@ -110,7 +110,8 @@ RUN apt-get clean; \
   rm -rf /var/lib/apt/lists/*; \
   rm -rf /tmp/* /var/tmp/*
 
-VOLUME [ "/var/www/html", "/var/log/apache2" ]
+VOLUME /var/www/html
+VOLUME /var/log/apache2
 
 EXPOSE 80
 
