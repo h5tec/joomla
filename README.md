@@ -57,3 +57,59 @@ version: 3.1
         MYSQL_ROOT_PASSWORD: YourRootPasswordFromMySQL
         PMA_HOST: mysql
 ```
+
+### Full Enviroment
+* Install packages
+```bash
+apt install -y ufw nginx python-certbot-nginx
+```
+* Configure UFW [Uncomplicated FireWall]
+```bash
+ufw allow 'Nginx Full'
+```
+* Create Nginx Congfiguration change **`example.org`** to your domainname
+**`nano /etc/nginx/conf.d/example.org.conf`**
+```conf
+server {
+  listen 80;
+  server_name example.org;
+  location /.well-known/acme-challenge/ {
+    root /var/www/certbot;
+  }
+  location / {
+    return 301
+    https://$host$request_uri;
+  }
+}
+server {
+  listen 443 ssl;
+  server_name example.org;
+  location / {
+    proxy_pass         http://localhost:8001;
+    proxy_redirect     http:// https://;
+    proxy_set_header   Host $host;
+    proxy_set_header   X-Real-IP $remote_addr;
+    proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header   X-Forwarded-Host $server_name;
+  }
+  client_max_body_size 16M;
+  # SSL certificate path will be added by certbot automaticly
+}
+```
+* Check nginx configuration **`nginx -t`**
+* Restart nginx **`service nginx restart`**
+* Optain LetsEncrypt Certificate
+```bash
+certbot --nginx -d example.org
+```
+* Check the new certificates
+https://www.ssllabs.com/ssltest/analyze.html?d=example.org
+
+_...f i n i s h e d_  
+  
+_Certbot check for new certificate twice a day via_  
+**`/etc/systemd/system/timers.target.wants/certbot.timer``**  
+  
+_Certbot timer status can be checked with_  
+**`systemctl status certbot.timer`**  
+
