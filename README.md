@@ -4,7 +4,7 @@ _by H5.Technology_ **`[admin@h5tec.com]`**
 **`debian:stretch`** **`joomla:3.9.10`** **`php:7.2`** **`apache2`**  
 
 ### PHP 7.2 Packages
-**`cli`** **`curl`** **`gd mysql`** **`zip`** **`xml`** **`ldap`** **`mbstring`** **`common`** **`json`** **`opcache`** **`readline`** **`intl`** **`fpm`**
+**`cli`** **`curl`** **`gd mysql`** **`zip`** **`xml`** **`ldap`** **`mbstring`** **`common`** **`json`** **`opcache`** **`readline`** **`intl`** **`fpm`** **`bz2`** **`mysqli`** **`pgsql`**
 
 ### Included 
 * **`php.ini`**    
