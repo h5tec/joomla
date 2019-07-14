@@ -102,10 +102,20 @@ server {
 ```bash
 certbot --nginx -d example.org
 ```
-* Check the new certificates  
-https://www.ssllabs.com/ssltest/analyze.html?d=example.org
+* Compose Up Environment
+* Change directory to the path docker-compose.yaml lies in
+> **`cd pathtoDockerComposeFIle`**  
+* Compose up
+> **`docker-compose up -d`**  
+* Check Login  
+https://example.org  
+* How to bring down environment?
+> **`docker-compose down`**  
 
 _...f i n i s h e d_  
+
+* Check the new certificates  
+https://www.ssllabs.com/ssltest/analyze.html?d=example.org
   
 _Certbot check for new certificate twice a day via_  
 **`/etc/systemd/system/timers.target.wants/certbot.timer`**  
