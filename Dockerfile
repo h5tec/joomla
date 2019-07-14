@@ -47,7 +47,6 @@ RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
     php7.2-xml \
     php7.2-ldap \
     php7.2-mbstring \
-    php7.2-mysql \
     php7.2-common \
     php7.2-json \
     php7.2-opcache \
