@@ -102,7 +102,7 @@ server {
 ```bash
 certbot --nginx -d example.org
 ```
-* Check the new certificates
+* Check the new certificates  
 https://www.ssllabs.com/ssltest/analyze.html?d=example.org
 
 _...f i n i s h e d_  
