@@ -28,7 +28,7 @@ docker run -d --restart=always --name myjoomla -p 8080:80 -v /dock/data/myjoomla
 ### Compose Joomla together with MySQL and PHPmyAdmin
 * **`docker-compose.yaml`**
 ```yaml
-version: 3.1
+version: "3.1"
   services:
     joomla:
       image: h5tec/joomla
