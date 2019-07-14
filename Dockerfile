@@ -88,6 +88,7 @@ RUN printf "\n<IfModule mod_env.c>\n  SetEnv HTTPS on\n</IfModule>\n\n" >> /etc/
 
 # configure php.ini
 RUN printf "memory_limit = 256M\n" >> /etc/php/7.2/apache2/php.ini; \
+  printf "output_buffering = off\n" >> /etc/php/7.2/apache2/php.ini; \
   printf "post_max_size = 32M\n" >> /etc/php/7.2/apache2/php.ini; \
   printf "date.timezone = Europe/Berlin\n" >> /etc/php/7.2/apache2/php.ini; \
   printf "upload_max_filesize = 32M\n" >> /etc/php/7.2/apache2/php.ini; \
