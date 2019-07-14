@@ -28,36 +28,32 @@ docker run -d --restart=always --name myjoomla -p 8080:80 -v /dock/data/myjoomla
 ### Compose Joomla together with MySQL and PHPmyAdmin
 * **`docker-compose.yaml`**
 ```yaml
-version: '3.1'
-
-services:
-
-  joomla:
-    image: enbucm/joomla
-    restart: always
-    links:
-      - mysql:mysql
-    ports:
-      - 8001:80
-
-  mysql:
-    image: mysql:5.7
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: YourPassword
-      MYSQL_DATABASE: YourDatabaseName
-      MYSQL_USER: YourUserName
-      MYSQL_PASSWORD: YourSecurePassword
-
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    restart: always
-    links:
-      - mysql:mysql
-    ports:
-      - 9001:80
-    environment:
-      MYSQL_USERNAME: root
-      MYSQL_ROOT_PASSWORD: YourRootPasswordFromMySQL
-      PMA_HOST: mysql
+version: 3.1
+  services:
+    joomla:
+      image: h5tec/joomla
+      restart: always
+      links:
+        - mysql:mysql
+      ports:
+        - 8001:80
+    mysql:
+      image: mysql:5.7
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: YourPassword
+        MYSQL_DATABASE: YourDatabaseName
+        MYSQL_USER: YourUserName
+        MYSQL_PASSWORD: YourSecurePassword
+    phpmyadmin:
+      image: phpmyadmin/phpmyadmin
+      restart: always
+      links:
+        - mysql:mysql
+      ports:
+        - 9001:80
+      environment:
+        MYSQL_USERNAME: root
+        MYSQL_ROOT_PASSWORD: YourRootPasswordFromMySQL
+        PMA_HOST: mysql
 ```
